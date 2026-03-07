@@ -2,11 +2,12 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>QISS</title>
+    <title>쿼터파이</title>
     <link rel="shortcut icon" type="image/x-icon" href="/logo.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+
     <style>
         @import url('https://fonts.cdnfonts.com/css/br-cobane');
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
@@ -79,8 +80,7 @@
 
         .brand-new {
             color: var(--primary-color);
-        
-            font-family: 'Pretendard Variable', sans-serif;
+            font-family: "Noto Serif KR";
             color: #282828;
         }
 
@@ -116,7 +116,6 @@
 
         .footer {
             position: absolute;
-            allign-items: center;
             bottom: 30px;
             width: 100%;
             font-size: 0.85rem;
@@ -141,21 +140,40 @@
     <div class="bg-deco deco-2"></div>
 
     <div class="container">
-        <span class="emoji">🌿</span>
-        <h1><span class="brand-new">쿼터파이는 점검중!</span></h1>
-
+        <span class="emoji">🪴</span>
+        <h1><span class="brand-old">qpi.kro.kr</span> <span class="brand-new">qpi.digital</span></h1>
         <p>
-            지금 쿼터파이는 더 깊고 특별한 경험을 드리기 위해<br>잠시 점검 시간을 갖고 있어요 🔍💻✨<br><br>
-            새로운 공간에서 펼쳐질 우리들의 이야기, 기대해 주실 거죠? 📖🎀✨<br>금방 돌아올게요! 🏃‍♂️💨💨
+            안녕하세요! 그동안 정들었던 주소 qpi.kro.kr 대신,
+            <br>이제는 더 기억하기 쉬운 <b>qpi.digital</b>에서 만나 뵐 수 있게 되었답니다.
+            <br>새로운 집에서도 즐거운 시간 보내시길 바랄게요!"
         </p>
+        
+        <a href="https://qpi.digital" class="move-button">
+            바로가기
+        </a>
+
         <div class="auto-redirect">
-            점검은 TBD 까지 진행될 예정이에요.
+            <span id="countdown">60</span>초 뒤에 자동으로 이동할게요!
         </div>
     </div>
-
 
     <div class="footer">
         2026 쿼터파이
     </div>
+
+    <script>
+        let seconds = 60;
+        const countdownEl = document.getElementById('countdown');
+        const targetUrl = "https://qpi.digital";
+
+        const timer = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
